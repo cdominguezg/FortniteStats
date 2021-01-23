@@ -28,19 +28,23 @@
 
           <div class="justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
-              <form class="">
-                <h3>Ingresa tu nickname</h3>
-                <div class="card card-sm">
-                  <div class="card-body row align-items-center">
-                    <div class="col-12">
-                      <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Introduce tu usuario">
-                    </div>
+              <h3>Ingresa tu nickname</h3>
+              <div class="card card-sm">
+                <div class="card-body row align-items-center">
+                  <div class="col-12">
+                    <label>
+                      <input [(ngModel)]="userName" (ngModelChange)="userName = $event"
+                             class="form-control form-control-lg form-control-borderless" type="search"
+                             placeholder="Introduce tu usuario">
+                    </label>
                   </div>
                 </div>
-                <div class="col-12 align-content-center mt-2">
-                  <button class="btn btn-lg btn-success purple-back" type="submit">Buscar</button>
-                </div>
-              </form>
+              </div>
+              <div class="col-12 align-content-center mt-2">
+                <button [disabled]="userName?.length == 0" (click)="getStats()"
+                        class="btn btn-lg btn-success purple-back" type="submit">Buscar
+                </button>
+              </div>
             </div>
             <!--end of col-->
           </div>
@@ -50,8 +54,97 @@
   </div> <!-- end of container -->
 </div> <!-- end of basic-1 -->
 <!-- end of statement -->
-
-
+<div class="container" *ngIf="stats?.status == 'error'">
+  <h3>Lo sentimos, ha habido un error</h3>
+</div>
+<div class="row">
+  <div class="container" *ngIf="stats?.status == 200">
+    <div class="row">
+      <div class="col-lg-12 align-items-center">
+        <h3 class="text-center">
+          Solo
+        </h3>
+        <table>
+          <tr>
+            <td>Asesinatos</td>
+            <td>{{stats.data.stats.all.solo.kills}}</td>
+          </tr>
+          <tr>
+            <td>Muertes</td>
+            <td>{{stats.data.stats.all.solo.deaths}}</td>
+          </tr>
+          <tr>
+            <td>Victorias</td>
+            <td>{{stats.data.stats.all.solo.wins}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 align-items-center">
+        <h3 class="text-center">
+          Duo
+        </h3>
+        <table>
+          <tr>
+            <td>Asesinatos</td>
+            <td>{{stats.data.stats.all.duo.kills}}</td>
+          </tr>
+          <tr>
+            <td>Muertes</td>
+            <td>{{stats.data.stats.all.duo.deaths}}</td>
+          </tr>
+          <tr>
+            <td>Victorias</td>
+            <td>{{stats.data.stats.all.duo.wins}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 align-items-center">
+        <h3 class="text-center">
+          Tríos
+        </h3>
+        <table>
+          <tr>
+            <td>Asesinatos</td>
+            <td>{{stats.data.stats.all.trio.kills}}</td>
+          </tr>
+          <tr>
+            <td>Muertes</td>
+            <td>{{stats.data.stats.all.trio.deaths}}</td>
+          </tr>
+          <tr>
+            <td>Victorias</td>
+            <td>{{stats.data.stats.all.trio.wins}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 align-items-center">
+        <h3 class="text-center">
+          Escuadrón
+        </h3>
+        <table>
+          <tr>
+            <td>Asesinatos</td>
+            <td>{{stats.data.stats.all.squad.kills}}</td>
+          </tr>
+          <tr>
+            <td>Muertes</td>
+            <td>{{stats.data.stats.all.squad.deaths}}</td>
+          </tr>
+          <tr>
+            <td>Victorias</td>
+            <td>{{stats.data.stats.all.squad.wins}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Footer -->
 <div class="footer bg-gray">
@@ -60,27 +153,15 @@
       <div class="col-lg-12">
         <div class="social-container">
                         <span class="fa-stack">
-                            <a href="#your-link">
+                            <a href="https://www.twitch.tv/smackcristian">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-twitch fa-stack-1x"></i>
                             </a>
                         </span>
           <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-twitter fa-stack-1x"></i>
-                            </a>
-                        </span>
-          <span class="fa-stack">
-                            <a href="#your-link">
+                            <a href="https://github.com/cdominguezg">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-github fa-stack-1x"></i>
-                            </a>
-                        </span>
-          <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-instagram fa-stack-1x"></i>
                             </a>
                         </span>
         </div> <!-- end of social-container -->
@@ -88,5 +169,6 @@
     </div> <!-- end of row -->
   </div> <!-- end of container -->
 </div>
+
 
 

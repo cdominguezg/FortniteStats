@@ -1,39 +1,3 @@
-/* Template: Gemdev Product Website Bootstrap HTML Template
-   Author: Inovatik
-   Description: Master CSS file
-*/
-
-/*****************************************
-Table Of Contents:
-
-- General Styles
-- Navigation
-- Header
-- Statement
-- Details 1
-- Details Lightbox
-- Details 2
-- Features
-- About
-- Statistics
-- Invitation
-- Contact
-- Footer
-- Copyright
-- Back To Top Button
-- Extra Pages
-- Media Queries
-******************************************/
-
-/*****************************************
-Colors:
-- Backgrounds, headings text - navy blue #1b1e7b
-- Backgrounds - light gray #f2f3fd
-- Buttons, icons - blue #026cfe
-- Body text - dark gray #6b747b
-******************************************/
-
-
 /**************************/
 /*     General Styles     */
 /**************************/
@@ -54,10 +18,17 @@ body, html {
   border: 1px solid #9d4dbb;
 
 }
+
 .purple-back:hover {
   background: #ffffff;
   color: black;
   border: 1px solid #9d4dbb;
+}
+
+.purple-back:disabled {
+  background: #a469b7;
+  color: white;
+  border: 1px solid #a469b7;
 }
 
 body, p {
@@ -429,7 +400,7 @@ input[type='checkbox'] {
 /*     Navigation     */
 /**********************/
 .navbar {
-  background-color: #f3af19;
+  background-color: #b87106;
   font: 600 0.875rem/0.875rem "Open Sans", sans-serif;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.025);
 }

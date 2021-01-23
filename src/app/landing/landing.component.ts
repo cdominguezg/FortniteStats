@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ViewportScroller} from '@angular/common';
+import {ApiService} from '../core/services/api.service';
 
 declare var jQuery;
 
@@ -9,7 +10,11 @@ declare var jQuery;
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
-  constructor(private viewportScroller: ViewportScroller) {
+
+  userName = '';
+  stats: any = null;
+
+  constructor(private viewportScroller: ViewportScroller, private apiService: ApiService) {
   }
 
   scrollToElement($element): void {
@@ -94,20 +99,6 @@ export class LandingComponent implements OnInit {
       WAVES.forEach((_, index) => updateWave(index)());
 
 
-      /* Details Lightbox - Magnific Popup */
-      $('.popup-with-move-anim').magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        fixedBgPos: true,
-        overflowY: 'auto',
-        closeBtnInside: true,
-        preloader: false,
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'my-mfp-slide-bottom'
-      });
-
-
       /* Counter - CountTo */
       let a = 0;
       $(window).scroll(() => {
@@ -142,30 +133,6 @@ export class LandingComponent implements OnInit {
       });
 
 
-      /* Move Form Fields Label When User Types */
-      // for input and textarea fields
-      $('input, textarea').keyup(() => {
-        if ($(this).val() !== '') {
-          $(this).addClass('notEmpty');
-        } else {
-          $(this).removeClass('notEmpty');
-        }
-      });
-
-
-      /* Back To Top Button */
-      // create the back to top button
-      $('body').prepend('<a href="body" class="back-to-top page-scroll">Back to Top</a>');
-      const amountScrolled = 700;
-      $(window).scroll(() => {
-        if ($(window).scrollTop() > amountScrolled) {
-          $('a.back-to-top').fadeIn('500');
-        } else {
-          $('a.back-to-top').fadeOut('500');
-        }
-      });
-
-
       /* Removes Long Focus On Buttons */
       $('.button, a, button').mouseup(() => {
         $(this).blur();
@@ -176,4 +143,13 @@ export class LandingComponent implements OnInit {
 
   }
 
+
+  getStats(): void {
+    this.apiService.getUserData(this.userName)
+      .subscribe(result => {
+        this.stats = result;
+      }, error => {
+        this.stats = {status: 'error'};
+      });
+  }
 }
