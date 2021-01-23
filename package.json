@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "deploy": "ng build --prod --base-href=/angular-ci-cd/",
+    "deploy": "ng build --prod --base-href=/FortniteStats/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
