@@ -20,17 +20,16 @@
   </div> <!-- end of container -->
 </div> <!-- end of header -->
 <!-- Statement -->
-<div [attr.id]="'statement'" class="basic-1">
+<div [attr.id]="'statement'" class="basic-1 align-items-center">
   <div class="container">
-    <div class="row">
+    <div class="row align-items-center">
       <div class="col-lg-12">
-        <div class="text-container align-items-center">
-
-          <div class="justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
+        <div class="text-container">
+          <div class="col-12 align-items-center">
+            <div class="col-auto">
               <h3>Ingresa tu nickname</h3>
-              <div class="card card-sm">
-                <div class="card-body row align-items-center">
+              <div class="card card-sm ">
+                <div class="card-body row">
                   <div class="col-12">
                     <label>
                       <input [(ngModel)]="userName" (ngModelChange)="userName = $event"
@@ -46,8 +45,9 @@
                 </button>
               </div>
             </div>
-            <!--end of col-->
           </div>
+
+          <!--end of col-->
         </div> <!-- end of text-container -->
       </div> <!-- end of col -->
     </div> <!-- end of row -->
