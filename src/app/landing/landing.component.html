@@ -1,0 +1,92 @@
+<div class="header">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="text-container">
+          <h1 class="h1-large">Fortnite Stats es una web donde puedes consultar tus estadísticas de Fortnite</h1>
+          <p class="p-large">Comprueba tus estadísticas, da igual la plataforma en la que juegues.</p>
+          <a class="btn-solid-lg page-scroll" (click)="scrollToElement('statement')">¡Vamos allá!</a>
+        </div> <!-- end of text-container -->
+      </div> <!-- end of col -->
+      <div class="col-lg-6">
+        <div class="image-container">
+          <img class="img-fluid" src="assets/images/fortnite-logo.svg" alt="alternative">
+        </div> <!-- end of image-container -->
+      </div> <!-- end of col -->
+    </div> <!-- end of row -->
+  </div> <!-- end of container -->
+</div> <!-- end of header -->
+<!-- Statement -->
+<div [attr.id]="'statement'" class="basic-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="text-container align-items-center">
+
+          <div class="justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+              <form class="">
+                <h3>Ingresa tu nickname</h3>
+                <div class="card card-sm">
+                  <div class="card-body row align-items-center">
+                    <div class="col-12">
+                      <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Introduce tu usuario">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 align-content-center mt-2">
+                  <button class="btn btn-lg btn-success purple-back" type="submit">Buscar</button>
+                </div>
+              </form>
+            </div>
+            <!--end of col-->
+          </div>
+        </div> <!-- end of text-container -->
+      </div> <!-- end of col -->
+    </div> <!-- end of row -->
+  </div> <!-- end of container -->
+</div> <!-- end of basic-1 -->
+<!-- end of statement -->
+
+
+
+<!-- Footer -->
+<div class="footer bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="social-container">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitch fa-stack-1x"></i>
+                            </a>
+                        </span>
+          <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+          <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x"></i>
+                            </a>
+                        </span>
+          <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+        </div> <!-- end of social-container -->
+      </div> <!-- end of col -->
+    </div> <!-- end of row -->
+  </div> <!-- end of container -->
+</div>
+
+
